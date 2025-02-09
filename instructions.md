@@ -40,8 +40,23 @@ When asked to "upgrade to Java 17", upgrade the repository to the following:
 2. Update test cases with minimal changes.
 3. Verify all tests pass.
 
-### Phase 4 - Enhancements (Optional)
+### Phase 4 - Java 17 Feature Implementation
+1. Convert POJOs to records where appropriate (e.g., PaymentRequest, PaymentResponse)
+2. Implement pattern matching for instanceof where applicable  
+3. Add sealed interfaces/classes where beneficial
+4. Utilize text blocks for any multi-line strings
+5. Add switch expressions where appropriate
 
-1. Implement Java 17 features (records, pattern matching, etc.).
-2. Add Spring Boot improvements.
-3. Enhance testing with new capabilities.
+### Phase 5 - Spring Boot 3 Improvements  
+1. Implement Spring Boot 3 native configuration properties
+2. Add Spring Boot actuator endpoints for monitoring
+3. Implement improved error handling with ProblemDetail
+4. Add OpenAPI 3 documentation
+5. Implement versioned APIs using API versioning support
+
+### Phase 6 - Testing Enhancements
+1. Implement parameterized tests using JUnit 5
+2. Add nested test classes for better organization
+3. Utilize test interfaces for shared test behavior  
+4. Implement parallel test execution
+5. Add dynamic tests where appropriate
