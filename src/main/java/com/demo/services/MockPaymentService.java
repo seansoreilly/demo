@@ -17,11 +17,12 @@ public class MockPaymentService implements PaymentService {
     @Override
     public PaymentResponse processPayment(PaymentRequest request) {
         String paymentId = UUID.randomUUID().toString();
-        PaymentResponse response = new PaymentResponse();
-        response.setId(paymentId);
-        response.setStatus("SUCCESS");
-        response.setAmount(request.getAmount());
-        response.setTimestamp(LocalDateTime.now());
+        PaymentResponse response = new PaymentResponse(
+            paymentId, 
+            "SUCCESS",
+            request.amount(),
+            LocalDateTime.now()
+        );
 
         paymentRecords.put(paymentId, response);
         return response;
@@ -40,8 +41,12 @@ public List<PaymentResponse> listPayments() {
     public PaymentResponse refundPayment(String paymentId) {
         PaymentResponse response = paymentRecords.get(paymentId);
         if (response != null) {
-            response.setStatus("REFUNDED");
-            response.setTimestamp(LocalDateTime.now());
+            response = new PaymentResponse(
+                response.id(),
+                "REFUNDED",
+                response.amount(),
+                LocalDateTime.now()
+            );
         }
         return response;
     }
