@@ -5,7 +5,8 @@ Gradle
 JUnit4
 prefer to use spring boot starters
 
-When I ask to "upgrade", upgrade the repo to this
+
+When I ask to "upgrade to Java 17", upgrade the repo to this
 Java 17
 Spring Boot 3
 Gradle
